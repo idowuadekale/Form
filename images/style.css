@@ -1,0 +1,90 @@
+/* Alignment styles for the form */
+
+body,
+html {
+    height: 100%;
+}
+
+
+/* Body Design */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e0956;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(41, 103, 129, 0.4) 10%, rgba(139, 89, 8, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #200d67 0%, #200d67 100%);
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(16, 128, 177, 0.5) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #03681c 0%, #200d67 100%);
+}
+
+
+/* Flip Code Start here */
+
+.flip-container {
+    perspective: 1000;
+}
+
+.flipper {
+    padding: 30px;
+    width: 300px;
+    height: 250px;
+    position: relative;
+    background: #f5f5f5;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+
+/* The Flipping rotation */
+
+.front,
+.back {
+    /*background-color: rgba(0,0,0,.3);*/
+    position: absolute;
+    padding: 10px 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+
+/* The FlipButton of the form */
+
+.flipbutton {
+    color: #15054e;
+    text-decoration: none;
+    text-align: left !important;
+}
