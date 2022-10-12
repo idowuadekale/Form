@@ -1,5 +1,3 @@
-/* Alignment styles for the form */
-
 body,
 html {
     height: 100%;
@@ -9,15 +7,26 @@ html {
 /* Body Design */
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1e0956;
-    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(41, 103, 129, 0.4) 10%, rgba(139, 89, 8, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
-    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #200d67 0%, #200d67 100%);
-    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(16, 128, 177, 0.5) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
-    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #03681c 0%, #200d67 100%);
-    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #03681c 0%, #200d67 100%);
+    margin: 0;
+    box-sizing: border-box;
+    /* display: flex; */
+    background: #092756;
+    animation-name: change;
+    animation-duration: 30s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+/* Standard syntax */
+
+@keyframes change {
+    from {
+        background-color: #270361;
+    }
+    to {
+        background-color: #670d10;
+    }
 }
 
 
@@ -87,4 +96,64 @@ input {
     color: #15054e;
     text-decoration: none;
     text-align: left !important;
+}
+
+#top,
+#botttom {
+    display: inline-block;
+}
+
+#bottom {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+
+/* Ball-Running Code */
+
+.Ball-run {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    animation-name: ball-run;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 10px;
+}
+
+@keyframes ball-run {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
 }
